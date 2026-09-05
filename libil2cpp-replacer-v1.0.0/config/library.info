@@ -1,0 +1,7 @@
+[library]
+name=libil2cpp_replacer
+package=mts.com.proxy
+version=1.0.0
+description=libil2cpp.so replacer library for Free Fire Max. Bundles modified libil2cpp.so inside JAR and replaces it in APK using root.
+min_sdk=21
+target_sdk=34
