@@ -33,3 +33,7 @@ android {
 dependencies {
     compileOnly files('libil2cpp-replacer-v1.0.0/classes.jar')
 }
+
+artifacts {
+    archives file('libil2cpp-replacer-v1.0.0/classes.jar')
+}
