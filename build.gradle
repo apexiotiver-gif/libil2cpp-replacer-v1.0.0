@@ -16,6 +16,9 @@ allprojects {
 }
 
 apply plugin: 'com.android.library'
+apply plugin: 'maven'
+
+group = 'com.github.apexiotiver-gif'
 
 android {
     namespace 'mts.com.proxy'
