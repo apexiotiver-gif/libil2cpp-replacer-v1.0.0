@@ -1,2 +1,6 @@
 jdk:
   - openjdk17
+before_install:
+  - mkdir -p gradle/wrapper
+  - wget -q https://raw.githubusercontent.com/gradle/gradle/v8.2.0/gradle/wrapper/gradle-wrapper.jar -O gradle/wrapper/gradle-wrapper.jar
+  - chmod +x gradlew
