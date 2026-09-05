@@ -2,14 +2,22 @@ apply plugin: 'java'
 apply plugin: 'maven'
 
 group = 'com.github.apexiotiver-gif'
-version = '2.0.0'
+version = '2.0.1'
 
-// Use the pre-built classes.jar directly
+// Copy the pre-built classes.jar as our output jar
 jar {
-    from zipTree('libil2cpp-replacer-v1.0.0/classes.jar')
+    from 'libil2cpp-replacer-v1.0.0/classes.jar'
 }
 
-// Also publish the original jar
-artifacts {
-    archives file('libil2cpp-replacer-v1.0.0/classes.jar')
+// Skip compilation - we already have classes.jar
+sourceSets {
+    main {
+        java {
+            srcDirs = []
+        }
+        resources {
+            srcDirs = ['libil2cpp-replacer-v1.0.0']
+            includes = ['classes.jar']
+        }
+    }
 }
