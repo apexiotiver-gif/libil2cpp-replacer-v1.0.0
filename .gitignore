@@ -1,0 +1,6 @@
+# Build artifacts
+build/
+.gradle/
+local.properties
+*.iml
+.idea/
