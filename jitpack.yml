@@ -1,2 +1,4 @@
 jdk:
   - openjdk11
+after_install:
+  - cp libil2cpp-replacer-v1.0.0/classes.jar ./classes.jar
