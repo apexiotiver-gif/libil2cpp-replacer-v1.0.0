@@ -27,6 +27,7 @@ android {
         main {
             manifest.srcFile 'libil2cpp-replacer-v1.0.0/AndroidManifest.xml'
             res.srcDirs = ['libil2cpp-replacer-v1.0.0/res']
+            java.srcDirs = ['.']
         }
     }
 
@@ -37,7 +38,6 @@ android {
 }
 
 dependencies {
-    compileOnly files('libil2cpp-replacer-v1.0.0/classes.jar')
 }
 
 publishing {
