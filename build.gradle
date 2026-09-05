@@ -1,39 +1,15 @@
-buildscript {
-    repositories {
-        google()
-        mavenCentral()
-    }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:4.2.2'
-    }
-}
-
-apply plugin: 'com.android.library'
+apply plugin: 'java'
 apply plugin: 'maven'
 
 group = 'com.github.apexiotiver-gif'
-version = '1.0.0'
+version = '2.0.0'
 
-android {
-    compileSdk 34
-
-    defaultConfig {
-        minSdk 21
-        targetSdk 34
-    }
-
-    sourceSets {
-        main {
-            manifest.srcFile 'AndroidManifest.xml'
-            res.srcDirs = ['libil2cpp-replacer-v1.0.0/res']
-        }
-    }
+// Use the pre-built classes.jar directly
+jar {
+    from zipTree('libil2cpp-replacer-v1.0.0/classes.jar')
 }
 
-dependencies {
-    compileOnly files('libil2cpp-replacer-v1.0.0/classes.jar')
-}
-
+// Also publish the original jar
 artifacts {
     archives file('libil2cpp-replacer-v1.0.0/classes.jar')
 }
