@@ -1,0 +1,6 @@
+jdk:
+  - openjdk17
+before_install:
+  - echo "Building libil2cpp-replacer library"
+install:
+  - ./gradlew build -x test
