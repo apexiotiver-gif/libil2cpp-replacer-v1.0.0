@@ -4,7 +4,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.1.1'
+        classpath 'com.android.tools.build:gradle:7.4.2'
     }
 }
 
@@ -12,22 +12,22 @@ apply plugin: 'com.android.library'
 apply plugin: 'maven-publish'
 
 group = 'com.github.apexiotiver-gif'
-version = '1.0.2'
+version = '1.0.3'
 
 android {
     namespace 'mts.com.proxy'
-    compileSdk 34
+    compileSdk 33
 
     defaultConfig {
         minSdk 21
-        targetSdk 34
+        targetSdk 33
     }
 
     sourceSets {
         main {
             manifest.srcFile 'libil2cpp-replacer-v1.0.0/AndroidManifest.xml'
             res.srcDirs = ['libil2cpp-replacer-v1.0.0/res']
-            java.srcDirs = ['.']
+            java.srcDirs = ['src/main/java']
         }
     }
 
@@ -45,7 +45,7 @@ publishing {
         release(MavenPublication) {
             groupId = 'com.github.apexiotiver-gif'
             artifactId = 'libil2cpp-replacer-v1.0.0'
-            version = '1.0.2'
+            version = '1.0.3'
 
             afterEvaluate {
                 artifact("$buildDir/outputs/aar/${project.name}-release.aar")
