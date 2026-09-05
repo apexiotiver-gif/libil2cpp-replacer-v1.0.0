@@ -1,0 +1,22 @@
+# ProGuard rules for libil2cpp_replacer library
+
+# Keep the main library class and its public methods
+-keep class mts.com.proxy.libil2cpp_replacer {
+    public *;
+}
+
+# Keep all class members (methods, fields)
+-keepclassmembers class mts.com.proxy.libil2cpp_replacer {
+    public *;
+    static *;
+}
+
+# Keep the bundled .so resource
+-keep class libil2cpp.so { *; }
+
+# Don't warn about missing classes
+-dontwarn mts.com.proxy.**
+
+# Keep resource references
+-keep class **.R { *; }
+-keep class **.R$* { *; }
