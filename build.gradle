@@ -5,14 +5,15 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:7.4.2'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
     }
 }
 
 apply plugin: 'com.android.library'
-apply plugin: 'maven-publish'
+apply plugin: 'com.github.dcendents.android-maven'
 
 group = 'com.github.apexiotiver-gif'
-version = '1.0.3'
+version = '1.0.4'
 
 android {
     namespace 'mts.com.proxy'
@@ -38,18 +39,4 @@ android {
 }
 
 dependencies {
-}
-
-publishing {
-    publications {
-        release(MavenPublication) {
-            groupId = 'com.github.apexiotiver-gif'
-            artifactId = 'libil2cpp-replacer-v1.0.0'
-            version = '1.0.3'
-
-            afterEvaluate {
-                artifact("$buildDir/outputs/aar/${project.name}-release.aar")
-            }
-        }
-    }
 }
